@@ -730,6 +730,10 @@
       gap: 3px;
     }
 
+    .project-grid-3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .project-card-thumb {
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -742,7 +746,7 @@
     .project-card:hover .project-card-thumb { filter: grayscale(0%); }
 
     .project-card-body {
-      padding: 14px 0 0 0;
+      padding: 14px 12px 0 12px;
       border-top: none;
       background: transparent;
     }
@@ -909,7 +913,7 @@
       <div class="project-releases-header">
         <span class="project-releases-title">브레드이발소 · 체리툰 | 2024.07 – 2026.03</span>
       </div>
-      <div class="project-grid">
+      <div class="project-grid project-grid-3col">
 
         <div class="project-card" onclick="openModal('modal-shorts')">
           <img class="project-card-thumb" src="images/thumb-shorts.jpg" alt="오리지널쇼츠">
