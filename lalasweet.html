@@ -1069,6 +1069,8 @@
   window.addEventListener('DOMContentLoaded', () => {
     const hash = location.hash;
     if (hash && hash.startsWith('#modal-')) {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) projectsSection.scrollIntoView({ behavior: 'instant' });
       setTimeout(() => openModal(hash.slice(1)), 300);
     }
   });
