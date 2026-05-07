@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>유호진 포트폴리오 · 라라스윗 콘텐츠 마케터 지원</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #3B8DE9;
+      --blue-dark: #2a74cc;
+      --blue-light: #EBF3FD;
+      --blue-mid: #cce0f7;
+      --dark: #1a1a1a;
+      --gray: #888;
+      --gray-mid: #555;
+      --gray-light: #f5f7fa;
+      --border: #e0e0e0;
+      --white: #fff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--gray);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--blue); }
+
+    .nav-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--gray);
+      background: var(--blue-light);
+      border: 1px solid var(--blue-mid);
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    .nav-tag span { color: var(--blue); font-weight: 700; }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding-top: 60px;
+    }
+
+    .hero-top {
+      background: var(--blue);
+      padding: 64px 60px 60px;
+      color: white;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-name {
+      font-size: 64px;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 1px;
+    }
+
+    .hero-bottom {
+      background: var(--white);
+      padding: 52px 60px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .hero-tagline {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.85;
+    }
+
+    .metrics-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .metric-row {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: var(--gray-light);
+    }
+    .metric-row:last-child { border-bottom: none; }
+
+    .metric-cell {
+      flex: 1;
+      padding: 18px 22px;
+      border-right: 1px solid var(--border);
+    }
+    .metric-cell:last-child { border-right: none; }
+
+    .metric-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+
+    /* ─── SECTION ─── */
+    section {
+      padding: 80px 60px;
+    }
+
+    section:nth-child(even) { background: var(--gray-light); }
+
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--blue);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 40px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--blue);
+    }
+
+    /* ─── PROJECT CARDS ─── */
+    .company-group { margin-bottom: 48px; }
+    .company-group:last-child { margin-bottom: 0; }
+
+    .company-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray-mid);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .company-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .proj-card {
+      text-decoration: none;
+      color: var(--dark);
+      display: block;
+      background: var(--white);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .proj-card-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(10%);
+      transition: filter 0.3s, transform 0.3s;
+    }
+
+    .proj-card:hover .proj-card-thumb {
+      filter: grayscale(0%);
+      transform: scale(1.02);
+    }
+
+    .proj-card-body {
+      padding: 14px 16px 16px;
+    }
+
+    .proj-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .proj-card-period {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 200;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      overflow-y: auto;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      width: 100%;
+      max-width: 780px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+    }
+
+    .modal-header {
+      background: var(--blue);
+      padding: 28px 36px 24px;
+      color: white;
+    }
+
+    .modal-tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .modal-period {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .modal-body { padding: 32px 36px 36px; }
+
+    .modal-summary {
+      font-size: 14px;
+      color: var(--gray-mid);
+      line-height: 1.8;
+      padding: 16px 20px;
+      background: var(--gray-light);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 28px;
+    }
+
+    .modal-sections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .modal-section {
+      background: var(--gray-light);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .modal-section.full { grid-column: 1 / -1; }
+
+    .modal-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .modal-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .modal-section ul li {
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .modal-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .modal-performance {
+      background: var(--blue);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+
+    .modal-performance .modal-section-label {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+
+    .perf-grid {
+      display: flex;
+      gap: 36px;
+    }
+
+    .perf-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .perf-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.4;
+    }
+
+    .modal-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .modal-showcase img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-links {
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .modal-links-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gray);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .modal-links a {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--blue);
+      text-decoration: none;
+      margin-right: 16px;
+      margin-bottom: 4px;
+    }
+
+    .modal-links a:hover { text-decoration: underline; }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover { background: rgba(255,255,255,0.3); }
+
+    /* ─── FADE ANIMATION ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-d1 { transition-delay: 0.1s; }
+    .fade-up-d2 { transition-delay: 0.2s; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--blue);
+      color: white;
+      padding: 32px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .footer-contact {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .hero-top { padding: 48px 24px 44px; }
+      .hero-bottom { padding: 40px 24px 48px; grid-template-columns: 1fr; gap: 32px; }
+      section { padding: 60px 24px; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+      .modal { margin: 0; border-radius: 0; }
+      .modal-sections { grid-template-columns: 1fr; }
+      footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">유호진</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <div class="nav-tag"><span>Lalasweet</span> 콘텐츠 마케터 지원</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="hero-top">
+    <div class="hero-label">Portfolio · 콘텐츠 마케터 지원</div>
+    <div class="hero-name">유호진</div>
+    <div class="hero-title">SNS 콘텐츠 기획 &nbsp;·&nbsp; 포맷 설계 &nbsp;·&nbsp; 성과 분석</div>
+  </div>
+  <div class="hero-bottom">
+    <div>
+      <div class="hero-tagline">
+        반응이 터지는 구조를 설계하고,<br>
+        데이터로 반복 가능하게 만드는<br>
+        콘텐츠 마케터입니다.
+      </div>
+      <div class="hero-desc">
+        브레드이발소에서 영상 중심 SNS 콘텐츠를 기획·제작했습니다.<br>
+        단순 편집이 아닌 타겟의 반응을 유도하는 포맷을 설계하고,<br>
+        A/B 테스트와 지표 분석으로 다음 콘텐츠에 반영했습니다.
+      </div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-row">
+        <div class="metric-cell">
+          <div class="metric-num">435만</div>
+          <div class="metric-label">단일 콘텐츠 최고 조회수<br>좋아요 15만</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">1,000만+</div>
+          <div class="metric-label">오리지널 쇼츠<br>월 최고 조회수</div>
+        </div>
+      </div>
+      <div class="metric-row">
+        <div class="metric-cell">
+          <div class="metric-num">CTR +0.3%p</div>
+          <div class="metric-label">썸네일 A/B 테스트<br>5.7% → 6.0%</div>
+        </div>
+        <div class="metric-cell">
+          <div class="metric-num">+28.6%</div>
+          <div class="metric-label">극장판 관객 수 증가<br>+57,661명</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-eyebrow">Work</p>
+  <h2 class="section-title">PROJECTS</h2>
+
+  <div class="company-group">
+    <div class="company-label">브레드이발소 &nbsp;|&nbsp; 2024.07 – 2026.03</div>
+    <div class="card-grid">
+      <div class="proj-card fade-up" onclick="openModal('modal-format')">
+        <img class="proj-card-thumb" src="https://img.youtube.com/vi/E2lOltKIzb0/hqdefault.jpg" alt="숏폼 포맷 개선">
+        <div class="proj-card-body">
+          <div class="proj-card-title">브레드이발소 숏폼 포맷 개선·기획</div>
+          <div class="proj-card-period">2024.07 — 2025.07</div>
+        </div>
+      </div>
+      <div class="proj-card fade-up fade-up-d1" onclick="openModal('modal-movie3')">
+        <img class="proj-card-thumb" src="https://img.youtube.com/vi/ot3R39lIuDk/hqdefault.jpg" alt="극장판 3기">
+        <div class="proj-card-body">
+          <div class="proj-card-title">극장판 3기 홍보 영상 기획·편집</div>
+          <div class="proj-card-period">2025.08 — 2025.10</div>
+        </div>
+      </div>
+      <div class="proj-card fade-up fade-up-d2" onclick="openModal('modal-thumbnail')">
+        <img class="proj-card-thumb" src="https://img.youtube.com/vi/Hj5g5E3pvL8/hqdefault.jpg" alt="썸네일 CTR">
+        <div class="proj-card-body">
+          <div class="proj-card-title">유튜브 썸네일 기획·CTR 개선</div>
+          <div class="proj-card-period">2024.07 — 2025.02</div>
+        </div>
+      </div>
+      <div class="proj-card fade-up" onclick="openModal('modal-shorts')">
+        <img class="proj-card-thumb" src="https://img.youtube.com/vi/yywAVG4YBnM/hqdefault.jpg" alt="오리지널 쇼츠">
+        <div class="proj-card-body">
+          <div class="proj-card-title">브레드이발소 오리지널 쇼츠 기획·운영</div>
+          <div class="proj-card-period">2025.07 — 2026.03</div>
+        </div>
+      </div>
+      <div class="proj-card fade-up fade-up-d1" onclick="openModal('modal-movie2')">
+        <img class="proj-card-thumb" src="https://img.youtube.com/vi/xwRH3n6d_Xs/hqdefault.jpg" alt="극장판 2기">
+        <div class="proj-card-body">
+          <div class="proj-card-title">극장판 2기 홍보 콘텐츠 기획·제작</div>
+          <div class="proj-card-period">2024.07 — 2024.10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="company-group">
+    <div class="company-label">CJ ENM 애니메이션부 · 인턴 &nbsp;|&nbsp; 2021.05 – 2021.11</div>
+    <div class="card-grid">
+      <div class="proj-card fade-up" onclick="openModal('modal-cjenm')">
+        <img class="proj-card-thumb" src="https://img.youtube.com/vi/gke95KRUs7M/hqdefault.jpg" alt="CJ ENM">
+        <div class="proj-card-body">
+          <div class="proj-card-title">투니버스 IP 기반 콘텐츠 기획·운영</div>
+          <div class="proj-card-period">2021.05 — 2021.11</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- modal-format -->
+<div id="modal-format" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-format')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-tag">브레드이발소</div>
+      <div class="modal-title">브레드이발소 편집 숏폼 포맷 전환 — AI 생성 파이프라인 설계</div>
+      <div class="modal-period">2024.07 – 2025.07</div>
+      <button class="modal-close" onclick="closeModal('modal-format')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary">
+        6~7년 전 에피소드를 단순 컷편집하던 방식을 탈피해 AI 이미지·영상 생성 파이프라인을 직접 설계하고
+        트렌드 반영 포맷으로 전환했습니다. 기획·프롬프트 설계·편집 전 과정을 100% 직접 수행했습니다.
+      </div>
+      <div class="modal-showcase">
+        <img src="https://img.youtube.com/vi/E2lOltKIzb0/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/Hj5g5E3pvL8/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/_EQGgJIEh2o/hqdefault.jpg" alt="">
+      </div>
+      <div class="modal-sections">
+        <div class="modal-section">
+          <div class="modal-section-label">WHY</div>
+          <ul>
+            <li><strong>기여도:</strong> 기획·프롬프트 설계·편집 전 과정 100% 직접 수행</li>
+            <li><strong>타겟:</strong> 1020세대</li>
+            <li><strong>목적:</strong> 기존 자산의 한계를 돌파하는 새 포맷 구축 + 조회수·참여율 향상</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">PROBLEM</div>
+          <ul>
+            <li>기존 편집 숏폼은 6~7년 전 에피소드를 단순 컷편집 — 최신 트렌드와 거리가 생기며 몰입도 저하</li>
+            <li>에피소드 내 장면만으로는 트렌드를 반영한 새 컨셉 구현 불가 — 포맷 자체를 바꿔야 하는 상황</li>
+          </ul>
+        </div>
+        <div class="modal-section full">
+          <div class="modal-section-label">SOLUTION · AI 파이프라인</div>
+          <ul>
+            <li>트렌드·밈 분석 → ChatGPT·Gemini로 컨셉 및 이미지 생성 프롬프트 설계</li>
+            <li>LMArena·Gemini로 복수 모델 비교 생성 → 최적 결과물 선택</li>
+            <li>Photoshop으로 캐릭터 IP와의 어색한 부분 리터치</li>
+            <li>Kling으로 이미지를 영상으로 변환해 숏폼에 삽입</li>
+            <li>이 파이프라인을 반복 적용 가능한 포맷으로 구조화</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-performance">
+        <div class="modal-section-label">PERFORMANCE</div>
+        <div class="perf-grid">
+          <div>
+            <div class="perf-num">435만</div>
+            <div class="perf-label">'래퍼 타노스의 과거' 조회수<br>계정 내 역대 최고 성과</div>
+          </div>
+          <div>
+            <div class="perf-num">15만</div>
+            <div class="perf-label">좋아요 수</div>
+          </div>
+          <div>
+            <div class="perf-num">~0.05%</div>
+            <div class="perf-label">평균 전환율 유지<br>조회수 대비 유입 성과 확인</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-links">
+        <div class="modal-links-label">콘텐츠 링크</div>
+        <a href="https://www.instagram.com/reel/DFKR4FsPNEV/" target="_blank">reel/DFKR4FsPNEV</a>
+        <a href="https://www.instagram.com/reel/DJ3i4X6P-o8/" target="_blank">reel/DJ3i4X6P-o8</a>
+        <a href="https://www.instagram.com/reel/DFFISwEv5pl/" target="_blank">reel/DFFISwEv5pl (래퍼타노스)</a>
+        <a href="https://www.instagram.com/reel/DJlhVdpvVAf/" target="_blank">reel/DJlhVdpvVAf</a>
+        <a href="https://www.instagram.com/reel/DJ8siIgvTRD/" target="_blank">reel/DJ8siIgvTRD</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-shorts -->
+<div id="modal-shorts" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-shorts')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-tag">브레드이발소</div>
+      <div class="modal-title">브레드이발소 오리지널 쇼츠 콘텐츠 기획·운영</div>
+      <div class="modal-period">2025.07 – 2026.03</div>
+      <button class="modal-close" onclick="closeModal('modal-shorts')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary">
+        브레드이발소의 인지도 확산과 팬 유입을 위해 트렌드를 반영한 오리지널 쇼츠를 기획·운영했습니다.
+        기획부터 성과 분석, 다음 콘텐츠 반영까지 전 사이클을 직접 담당했습니다.
+      </div>
+      <div class="modal-showcase">
+        <img src="https://img.youtube.com/vi/yywAVG4YBnM/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/uDnjn-SSNNo/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/yQ0hGiCyaxA/hqdefault.jpg" alt="">
+      </div>
+      <div class="modal-sections">
+        <div class="modal-section">
+          <div class="modal-section-label">WHY</div>
+          <ul>
+            <li><strong>기여도:</strong> 기획 주도 및 제작 부서 커뮤니케이션 — 70%</li>
+            <li><strong>타겟:</strong> 1020세대</li>
+            <li><strong>목적:</strong> 인지도 확산 + 팬 유입 유도</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">PROBLEM</div>
+          <ul>
+            <li>극장판 홍보 시기와 맞물려 채널이 홍보 중심으로 편중 → 기존 팬 대상 몰입도 저하</li>
+            <li>오리지널 재미를 유지하면서 홍보 메시지를 자연스럽게 녹여야 하는 이중 과제</li>
+          </ul>
+        </div>
+        <div class="modal-section full">
+          <div class="modal-section-label">SOLUTION</div>
+          <ul>
+            <li>캐릭터 성격 기반 상황극 포맷으로 소비 → 채널 재방문 → 구독으로 이어지는 유입 구조 설계</li>
+            <li>홍보 메시지를 직접 전달하지 않고 상황·캐릭터 안에 자연스럽게 녹여 반응률 향상</li>
+            <li>조회수·공유·팔로워 전환율 분석 → 트렌드 변화를 빠르게 다음 기획에 반영</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-performance">
+        <div class="modal-section-label">PERFORMANCE</div>
+        <div class="perf-grid">
+          <div>
+            <div class="perf-num">1,000만+</div>
+            <div class="perf-label">한 달 내 조회수 달성 콘텐츠 2편</div>
+          </div>
+          <div>
+            <div class="perf-num">69% → 72.8%</div>
+            <div class="perf-label">시청자 참여율 상승</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-links">
+        <div class="modal-links-label">콘텐츠 링크</div>
+        <a href="https://www.youtube.com/shorts/yywAVG4YBnM" target="_blank">shorts/yywAVG4YBnM</a>
+        <a href="https://www.youtube.com/shorts/uDnjn-SSNNo" target="_blank">shorts/uDnjn-SSNNo</a>
+        <a href="https://www.youtube.com/shorts/yQ0hGiCyaxA" target="_blank">shorts/yQ0hGiCyaxA</a>
+        <a href="https://www.youtube.com/shorts/2DLL2MUl4Qg" target="_blank">shorts/2DLL2MUl4Qg</a>
+        <a href="https://www.youtube.com/shorts/FcIe1kFfTq0" target="_blank">shorts/FcIe1kFfTq0</a>
+        <a href="https://www.youtube.com/shorts/Moq8I1KmG2k" target="_blank">shorts/Moq8I1KmG2k</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-thumbnail -->
+<div id="modal-thumbnail" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-thumbnail')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-tag">브레드이발소</div>
+      <div class="modal-title">유튜브 썸네일 기획·제작 및 클릭률 개선</div>
+      <div class="modal-period">2024.07 – 2025.02</div>
+      <button class="modal-close" onclick="closeModal('modal-thumbnail')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary">
+        브레드이발소의 세계관과 트렌드를 시각적으로 재해석하여 유튜브 클릭률을 높이는 썸네일을 기획·제작했습니다.
+        YouTube Studio A/B 테스트로 썸네일별 CTR 및 시청 시간 성과를 비교·검증했습니다.
+      </div>
+      <div class="modal-showcase">
+        <img src="https://img.youtube.com/vi/E2lOltKIzb0/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/Hj5g5E3pvL8/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/4RtP7dSKPw0/hqdefault.jpg" alt="">
+      </div>
+      <div class="modal-sections">
+        <div class="modal-section">
+          <div class="modal-section-label">PROBLEM</div>
+          <ul>
+            <li>기존 썸네일은 반복적 형식·제한된 소재 → 클릭 유도 요소 부족</li>
+            <li>CTR·조회수·구독자 증가로 이어지지 않는 구조적 한계 존재</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">SOLUTION</div>
+          <ul>
+            <li>장면 캡처 → 감정·반전 중심 이미지로 전환해 클릭 유도 강화</li>
+            <li>시즌 이슈·트렌드를 반영해 시의성과 클릭 유도 동시 강화</li>
+            <li>AI 이미지 생성 + Photoshop 보정으로 기존 에피소드 캡처 한계 극복</li>
+            <li>YouTube Studio A/B 테스트로 CTR·시청 시간 지속 비교 검증</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-performance">
+        <div class="modal-section-label">PERFORMANCE</div>
+        <div class="perf-grid">
+          <div>
+            <div class="perf-num">5.7% → 6.0%</div>
+            <div class="perf-label">CTR 상승 (입사 전/후 4개월 비교)</div>
+          </div>
+          <div>
+            <div class="perf-num">$8,500+</div>
+            <div class="perf-label">예상 수익 증가</div>
+          </div>
+          <div>
+            <div class="perf-num">+12%</div>
+            <div class="perf-label">구독자 증가율 향상</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-links">
+        <div class="modal-links-label">콘텐츠 링크</div>
+        <a href="https://youtu.be/E2lOltKIzb0" target="_blank">youtu.be/E2lOltKIzb0</a>
+        <a href="https://youtu.be/Hj5g5E3pvL8" target="_blank">youtu.be/Hj5g5E3pvL8</a>
+        <a href="https://youtu.be/_EQGgJIEh2o" target="_blank">youtu.be/_EQGgJIEh2o</a>
+        <a href="https://youtu.be/4RtP7dSKPw0" target="_blank">youtu.be/4RtP7dSKPw0</a>
+        <a href="https://youtu.be/PhY0vqEZKCk" target="_blank">youtu.be/PhY0vqEZKCk</a>
+        <a href="https://youtu.be/QczJPAoTt3Q" target="_blank">youtu.be/QczJPAoTt3Q</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-movie3 -->
+<div id="modal-movie3" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-movie3')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-tag">브레드이발소</div>
+      <div class="modal-title">극장판 3기 홍보 영상(런칭·티저·메인) 기획·제작</div>
+      <div class="modal-period">2025.08 – 2025.10</div>
+      <button class="modal-close" onclick="closeModal('modal-movie3')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary">
+        브레드이발소 극장판 3기 개봉에 맞춰 런칭·티저·메인 예고편을 포함한 홍보 영상 전반을 기획·제작했습니다.
+      </div>
+      <div class="modal-showcase">
+        <img src="https://img.youtube.com/vi/ot3R39lIuDk/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/WdUixeb165s/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/2GGOplO6TQs/hqdefault.jpg" alt="">
+      </div>
+      <div class="modal-sections">
+        <div class="modal-section">
+          <div class="modal-section-label">PROBLEM</div>
+          <ul>
+            <li>기존 극장판 대비 더 높은 관객 유입이 필요하나 신규 관객 유인 요소 부족</li>
+            <li>굿즈·이벤트 정보 전달이 단발성 → 관람 전 기대감을 지속 형성할 콘텐츠 부재</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">SOLUTION</div>
+          <ul>
+            <li>'악당' 테마를 중심으로 서사를 재구성 — 스토리처럼 몰입할 수 있는 예고편 구조 설계</li>
+            <li>AI 파이프라인으로 주차별 신규 캐릭터·굿즈 씬 제작 — 기존 에피소드 한계 극복</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-performance">
+        <div class="modal-section-label">PERFORMANCE</div>
+        <div class="perf-grid">
+          <div>
+            <div class="perf-num">6.3만 → 12만</div>
+            <div class="perf-label">런칭·티저·메인 예고편<br>평균 조회수 약 2배 상승</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-links">
+        <div class="modal-links-label">콘텐츠 링크</div>
+        <a href="https://www.youtube.com/watch?v=ot3R39lIuDk" target="_blank">youtu.be/ot3R39lIuDk</a>
+        <a href="https://www.youtube.com/watch?v=WdUixeb165s" target="_blank">youtu.be/WdUixeb165s</a>
+        <a href="https://www.youtube.com/watch?v=2GGOplO6TQs" target="_blank">youtu.be/2GGOplO6TQs</a>
+        <a href="https://www.youtube.com/watch?v=zf281ivYPIQ" target="_blank">youtu.be/zf281ivYPIQ</a>
+        <a href="https://www.youtube.com/watch?v=1zZ4XBKH3no" target="_blank">youtu.be/1zZ4XBKH3no</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-movie2 -->
+<div id="modal-movie2" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-movie2')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-tag">브레드이발소</div>
+      <div class="modal-title">극장판 2기 홍보 콘텐츠 기획·제작</div>
+      <div class="modal-period">2024.07 – 2024.10</div>
+      <button class="modal-close" onclick="closeModal('modal-movie2')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary">
+        브레드이발소 극장판 개봉에 맞춰 시리즈 팬과 신규 관객 유입을 위한 홍보 콘텐츠를 기획·제작했습니다.
+        개봉 시기(추석 연휴)에 맞춘 유튜브·인스타그램 콘텐츠 일정을 기획·운영했습니다.
+      </div>
+      <div class="modal-showcase">
+        <img src="https://img.youtube.com/vi/xwRH3n6d_Xs/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/08cjU_We-1A/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/_GvPyzSL_WY/hqdefault.jpg" alt="">
+      </div>
+      <div class="modal-sections">
+        <div class="modal-section">
+          <div class="modal-section-label">PROBLEM</div>
+          <ul>
+            <li>기존 극장판 대비 더 높은 관객 유입 필요 — 팬층 외 신규 관객 유인 요소 부족</li>
+            <li>굿즈·이벤트 정보 전달이 단발성 → 관람 전 기대감을 지속 형성할 콘텐츠 필요</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">SOLUTION</div>
+          <ul>
+            <li>유쾌한 장면 활용 숏폼 콘텐츠를 주기적으로 발행해 자연스러운 바이럴 유도</li>
+            <li>굿즈·이벤트 정보를 시각화해 관람 동기 강화, 방문 유입으로 연결</li>
+            <li>추석 연휴 시기에 맞춘 유튜브·인스타그램 콘텐츠 일정 기획·운영</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-performance">
+        <div class="modal-section-label">PERFORMANCE</div>
+        <div class="perf-grid">
+          <div>
+            <div class="perf-num">+28.6%</div>
+            <div class="perf-label">1기 대비 관객 수 증가</div>
+          </div>
+          <div>
+            <div class="perf-num">+57,661명</div>
+            <div class="perf-label">관객 수 증가 (절대값)</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-links">
+        <div class="modal-links-label">콘텐츠 링크</div>
+        <a href="https://youtu.be/xwRH3n6d_Xs" target="_blank">youtu.be/xwRH3n6d_Xs</a>
+        <a href="https://youtu.be/08cjU_We-1A" target="_blank">youtu.be/08cjU_We-1A</a>
+        <a href="https://youtu.be/_GvPyzSL_WY" target="_blank">youtu.be/_GvPyzSL_WY</a>
+        <a href="https://youtu.be/Z9yGEDQVlm4" target="_blank">youtu.be/Z9yGEDQVlm4</a>
+        <a href="https://www.youtube.com/watch?v=uJ8YamOl1Ls" target="_blank">youtu.be/uJ8YamOl1Ls</a>
+        <a href="https://www.youtube.com/watch?v=tQiCHqT8i_E" target="_blank">youtu.be/tQiCHqT8i_E</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal-cjenm -->
+<div id="modal-cjenm" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-cjenm')">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-tag">CJ ENM · 인턴</div>
+      <div class="modal-title">투니버스 IP 기반 콘텐츠 기획·운영 (썸네일·SNS)</div>
+      <div class="modal-period">2021.05 – 2021.11</div>
+      <button class="modal-close" onclick="closeModal('modal-cjenm')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary">
+        CJ ENM 투니버스 IP를 활용해 클릭을 만드는 썸네일과 콘텐츠처럼 소비되는 SNS 콘텐츠를 함께 설계했습니다.
+        감정·궁금증 중심 썸네일과 트렌드 기반 캐릭터 콘텐츠를 결합해 유입부터 반응까지 이어지는 구조를 구축했습니다.
+      </div>
+      <div class="modal-showcase">
+        <img src="https://img.youtube.com/vi/gke95KRUs7M/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/ARyvIJI8z1s/hqdefault.jpg" alt="">
+        <img src="https://img.youtube.com/vi/Zfj72GyKyOg/hqdefault.jpg" alt="">
+      </div>
+      <div class="modal-sections">
+        <div class="modal-section">
+          <div class="modal-section-label">PROBLEM</div>
+          <ul>
+            <li>기존 콘텐츠는 썸네일 클릭 이후 소비·반응으로 이어지지 않는 구조적 한계</li>
+            <li>홍보성 콘텐츠가 광고 느낌이 강해 자연스럽게 소비되지 못하고 이탈로 이어짐</li>
+          </ul>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label">SOLUTION</div>
+          <ul>
+            <li>썸네일: 감정·궁금증 중심으로 클릭 유도, 단순 캡처 탈피</li>
+            <li>SNS 콘텐츠: 트렌드 기반 상황극으로 자연스러운 소비 유도</li>
+            <li>유입(썸네일)과 소비(SNS) 각 단계별 전략 분리로 반응 최적화</li>
+          </ul>
+        </div>
+        <div class="modal-section full">
+          <div class="modal-section-label">역할 및 수행 내용</div>
+          <ul>
+            <li>투니버스 유튜브 채널 썸네일 기획·디자인 — 감정·궁금증 중심 구성으로 클릭 유도 개선</li>
+            <li>캐릭터 IP 기반 트렌드 SNS 콘텐츠 기획·제작 — 자연스러운 소비 유도 구조 설계</li>
+            <li>Premiere Pro, After Effects, Photoshop 편집·디자인 실무 수행</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-links">
+        <div class="modal-links-label">콘텐츠 링크</div>
+        <a href="https://www.youtube.com/watch?v=gke95KRUs7M" target="_blank">youtu.be/gke95KRUs7M</a>
+        <a href="https://www.youtube.com/watch?v=ARyvIJI8z1s" target="_blank">youtu.be/ARyvIJI8z1s</a>
+        <a href="https://www.youtube.com/watch?v=Zfj72GyKyOg" target="_blank">youtu.be/Zfj72GyKyOg</a>
+        <a href="https://www.youtube.com/watch?v=bupqY1qrSHE" target="_blank">youtu.be/bupqY1qrSHE</a>
+        <a href="https://www.instagram.com/p/CP-Y3CeMR2q/" target="_blank">instagram/CP-Y3CeMR2q</a>
+        <a href="https://www.instagram.com/p/CUwx3YRBOdu/" target="_blank">instagram/CUwx3YRBOdu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">유호진</div>
+  <div class="footer-contact">
+    <span>010-9391-3150</span>
+    <span>hojinyu315@gmail.com</span>
+  </div>
+</footer>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeModalOnOverlay(e, id) {
+    if (e.target === document.getElementById(id)) closeModal(id);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(el => {
+        el.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  // URL 해시로 모달 직접 열기 (PDF 링크 연동)
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = location.hash;
+    if (hash && hash.startsWith('#modal-')) {
+      setTimeout(() => openModal(hash.slice(1)), 300);
+    }
+  });
+
+  // 스크롤 페이드 애니메이션
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // 네비 active
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const sections = document.querySelectorAll('section[id], div[id="about"]');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+</script>
+</body>
+</html>
