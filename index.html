@@ -1381,6 +1381,14 @@
     document.getElementById(id).classList.add('open');
     document.body.style.overflow = 'hidden';
   }
+
+  // URL 해시로 모달 직접 열기 (PDF 링크 연동)
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = location.hash;
+    if (hash && hash.startsWith('#modal-')) {
+      setTimeout(() => openModal(hash.slice(1)), 300);
+    }
+  });
   function closeModal(id) {
     document.getElementById(id).classList.remove('open');
     document.body.style.overflow = '';
