@@ -1069,9 +1069,13 @@
   window.addEventListener('DOMContentLoaded', () => {
     const hash = location.hash;
     if (hash && hash.startsWith('#modal-')) {
-      const projectsSection = document.getElementById('projects');
-      if (projectsSection) projectsSection.scrollIntoView({ behavior: 'instant' });
-      setTimeout(() => openModal(hash.slice(1)), 300);
+      const modalId = hash.slice(1);
+      // rAF: 브라우저 자체 해시 스크롤이 끝난 뒤 projects 섹션으로 이동
+      requestAnimationFrame(() => {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) window.scrollTo(0, projectsSection.offsetTop);
+        setTimeout(() => openModal(modalId), 250);
+      });
     }
   });
 
