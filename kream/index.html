@@ -433,6 +433,7 @@
       border: none;
       transition: transform 0.22s;
       cursor: pointer;
+      position: relative;
     }
 
     .project-card:hover { transform: translateY(-3px); }
@@ -461,19 +462,18 @@
 
     .card-heart {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(255,255,255,0.82);
+      bottom: 2px;
+      right: 0;
+      background: none;
       border: none;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       padding: 0;
-      backdrop-filter: blur(4px);
       flex-shrink: 0;
     }
 
@@ -995,62 +995,62 @@
         <div class="project-card" onclick="openModal('modal-format')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-format.jpg" alt="쇼츠 포맷" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">브레드이발소 IP 바이럴 포맷 개선·기획</div>
             <div class="project-card-period">2024.07 — 2025.07</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
         <div class="project-card" onclick="openModal('modal-movie3')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-movie3.jpg" alt="극장판 3기" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">극장판 3기 브랜드 프로모션 영상 기획·편집</div>
             <div class="project-card-period">2025.08 — 2025.10</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
         <div class="project-card" onclick="openModal('modal-thumbnail')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-thumbnail.jpg" alt="썸네일 CTR" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">유튜브 썸네일 기획·CTR 개선</div>
             <div class="project-card-period">2024.07 — 2025.02</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
         <div class="project-card" onclick="openModal('modal-shorts')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-shorts.jpg" alt="오리지널 쇼츠" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">브레드이발소 오리지널 쇼츠 기획·운영</div>
             <div class="project-card-period">2025.07 — 2026.03</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
         <div class="project-card" onclick="openModal('modal-movie2')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-movie2.jpg" alt="극장판 2기" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">극장판 2기 브랜드 이벤트·프로모션 콘텐츠 기획·제작</div>
             <div class="project-card-period">2024.07 — 2024.10</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1063,14 +1063,14 @@
         <div class="project-card" onclick="openModal('modal-cheritoon')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-cheritoon.jpg" alt="체리툰" style="object-position:50% 30%;" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">체리툰 오리지널 숏폼 기획·제작</div>
             <div class="project-card-period">2025.09 — 2026.03</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1083,14 +1083,14 @@
         <div class="project-card" onclick="openModal('modal-crehoho')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/crehoho-collage.jpg" alt="Crehoho" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">감정 체험형 콘텐츠 기획 — How are you Now?</div>
             <div class="project-card-period">2023.05 — 2023.11</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1103,14 +1103,14 @@
         <div class="project-card" onclick="openModal('modal-cjenm')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="images/thumb-cjenm.jpg" alt="CJ ENM" onerror="this.style.background='#f4f4f4'">
-            <button class="card-heart" onclick="event.stopPropagation()">
-              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            </button>
           </div>
           <div class="project-card-body">
             <div class="project-card-title">CJ ENM Tooniversus IP 콘텐츠 기획·운영</div>
             <div class="project-card-period">2021.05 — 2021.11</div>
           </div>
+          <button class="card-heart" onclick="event.stopPropagation()">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
         </div>
       </div>
     </div>
