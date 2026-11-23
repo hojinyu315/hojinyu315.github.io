@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="유호진의 그냥필름 채널 편집자 지원 포트폴리오. 브레드이발소 상황극 숏폼, 극장판 예고편, 공식 채널 운영 사례.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="유호진 | 그냥필름 채널 편집자 포트폴리오">
+  <meta property="og:description" content="상황극 숏폼 기획·편집, 극장판 예고편 마감, 유튜브·인스타그램 채널 운영.">
+  <meta property="og:image" content="https://hojinyu315.github.io/images/thumb-format.jpg">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>유호진 | 그냥필름 채널 편집자 포트폴리오</title>
+  <style>
+  
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --gold: #c9b46e;
+      --gold-light: #e8dba0;
+      --cream: #e8e8b0;
+      --white: #ffffff;
+      --gray: #888888;
+      --card-bg: #161616;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,180,110,0.15);
+    }
+
+    nav .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+    }
+
+    nav ul a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 60px 80px;
+      border-bottom: 1px solid rgba(201,180,110,0.2);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-subtitle {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 4.4vw, 56px);
+      line-height: 1.25;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero-title span { color: var(--gold); }
+
+    .hero-checks {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .hero-checks li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .hero-checks li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      border-left: 2px solid var(--gold);
+      padding-left: 16px;
+      line-height: 1.8;
+    }
+
+    /* SECTION COMMON */
+    section { padding: 100px 60px; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      letter-spacing: 2px;
+      margin-bottom: 56px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(201,180,110,0.25);
+    }
+
+    /* CAREER */
+    #career { background: var(--black); }
+
+    .career-item {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .career-item:last-child { border-bottom: none; }
+
+    .career-meta { padding-top: 4px; }
+
+    .career-company {
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .career-role {
+      font-size: 13px;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .career-period {
+      font-size: 12px;
+      color: var(--gray);
+      letter-spacing: 0.5px;
+    }
+
+    .career-bullets {
+      list-style: none;
+      padding-top: 4px;
+    }
+
+    .career-bullets li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 10px;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .career-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .career-bullets li strong {
+      color: var(--white);
+    }
+
+    /* PROJECTS */
+    #projects { background: #0d0d0d; }
+
+    .project-group { margin-bottom: 64px; }
+
+    .project-group-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(201,180,110,0.2);
+      letter-spacing: 0.5px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,180,110,0.4);
+    }
+
+    .project-card-thumb {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card-thumb-placeholder {
+      width: 100%;
+      height: 190px;
+      background: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+    }
+
+    .project-card-body { padding: 20px; }
+
+    .project-card-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,180,110,0.4);
+      border-radius: 3px;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+    }
+
+    .project-card-title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .project-card-period {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+
+    .project-card-result {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    .project-card-result strong { color: var(--gold-light); }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 200;
+      overflow-y: auto;
+      padding: 60px 20px;
+    }
+
+    .modal-overlay.open { display: flex; justify-content: center; }
+
+    .modal {
+      background: #141414;
+      border: 1px solid rgba(201,180,110,0.2);
+      border-radius: 12px;
+      max-width: 780px;
+      width: 100%;
+      padding: 48px;
+      position: relative;
+      align-self: flex-start;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: none;
+      border: none;
+      color: var(--gray);
+      font-size: 24px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover { color: var(--white); }
+
+    .modal-tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .modal-period {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .modal-summary {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      background: rgba(201,180,110,0.07);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .modal-section-title {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      margin-top: 28px;
+    }
+
+    .modal-list {
+      list-style: none;
+    }
+
+    .modal-list li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .modal-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 12px;
+    }
+
+    .modal-list li strong { color: var(--gold-light); }
+
+    .modal-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .modal-images img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .modal-links {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .modal-link {
+      font-size: 12px;
+      color: var(--gold);
+      border: 1px solid rgba(201,180,110,0.4);
+      border-radius: 4px;
+      padding: 6px 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .modal-link:hover { background: rgba(201,180,110,0.1); }
+
+    /* VIDEO THUMBNAIL GRID */
+    .modal-video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .modal-video-thumb {
+      position: relative;
+      display: block;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: #1e1e1e;
+      text-decoration: none;
+    }
+
+    .modal-video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .modal-video-thumb:hover img {
+      transform: scale(1.04);
+      opacity: 0.75;
+    }
+
+    .modal-video-thumb .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .modal-video-thumb:hover .play-btn { opacity: 1; }
+
+    .modal-video-thumb .play-btn span {
+      width: 40px;
+      height: 40px;
+      background: rgba(201,180,110,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #000;
+    }
+
+    /* CONTENT SHOWCASE */
+    .modal-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 16px;
+      background: #0a0a0a;
+    }
+
+    .modal-showcase-item {
+      display: block;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .modal-showcase-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.55);
+      transition: filter 0.3s ease;
+    }
+
+    .modal-showcase:hover .modal-showcase-item img {
+      filter: brightness(0.22);
+    }
+
+    .modal-showcase:hover .modal-showcase-item:hover img {
+      filter: brightness(1);
+    }
+
+    .modal-showcase-item .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .modal-showcase-item:hover .play-btn { opacity: 1; }
+
+    .modal-showcase-item .play-btn span {
+      width: 38px;
+      height: 38px;
+      background: rgba(201,180,110,0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #000;
+    }
+
+    /* SCROLL ANIMATION */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ACTIVITIES */
+    #activities { background: var(--black); }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .activity-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .activity-period {
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .activity-name {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .activity-bullets {
+      list-style: none;
+    }
+
+    .activity-bullets li {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .activity-bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .activity-award {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--black);
+      background: var(--gold);
+      border-radius: 3px;
+      padding: 3px 10px;
+      letter-spacing: 0.5px;
+    }
+
+    /* FOOTER */
+    footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 90;
+      background: var(--cream);
+      color: var(--black);
+      text-align: center;
+      padding: 18px 60px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      transition: box-shadow 0.2s;
+    }
+
+    footer a.footer-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      padding: 8px 32px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    footer a.footer-contact:hover {
+      background: rgba(0,0,0,0.07);
+    }
+
+    footer .footer-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 4px;
+      color: var(--black);
+    }
+
+    footer .footer-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    footer .footer-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
+    footer .footer-cta-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    footer .footer-email {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: 0.3px;
+    }
+
+    body { padding-bottom: 72px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      nav ul { display: none; }
+      section { padding: 72px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .hero-inner { flex-direction: column; gap: 40px; text-align: center; }
+      .hero-checks li { text-align: left; }
+      .career-item { grid-template-columns: 1fr; gap: 16px; }
+      .modal { padding: 32px 24px; }
+    }
+  
+
+  :root {color-scheme:dark; --gray:#aaa69e; --focus:#f4e4a8}
+  body{font-size:1rem;word-break:keep-all}
+  a{color:inherit}
+  button{font:inherit}
+  :where(a,button):focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+  .skip{position:fixed;left:1rem;top:1rem;z-index:300;padding:.75rem;background:var(--focus);color:#12100b;transform:translateY(-180%)}
+  .skip:focus{transform:none}
+  nav{padding:14px clamp(20px,5vw,60px)}
+  nav .logo{text-decoration:none;white-space:nowrap}
+  nav ul{gap:clamp(1rem,4vw,2.25rem)}
+  nav ul a{font-size:.875rem}
+  main section{scroll-margin-top:70px}
+  .hero{min-height:auto;padding-top:145px;padding-bottom:64px}
+  .hero-inner{gap:clamp(36px,8vw,90px)}
+  .hero-title{font-family:'Noto Sans KR',sans-serif;font-size:clamp(2rem,5.1vw,4.25rem);font-weight:900;line-height:1.22;letter-spacing:-.055em;margin-bottom:18px}
+  .hero-subtitle{font-size:.875rem;letter-spacing:.13em}
+  .hero-tagline{font-size:1rem;color:#cbc7bf;margin-bottom:24px;max-width:650px}
+  .hero-photo{width:clamp(140px,18vw,218px);height:clamp(140px,18vw,218px)}
+  .pills{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+  .pills li{list-style:none;color:#dfd9ca;font-size:.875rem;border:1px solid #524937;border-radius:4px;padding:6px 12px}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:46px auto 0;max-width:1100px;width:100%}
+  .metrics div{border-top:1px solid #5d5130;padding:13px 0 0}
+  .metrics strong{color:var(--gold-light);display:block;font-size:clamp(1.22rem,3vw,1.85rem);font-weight:900;letter-spacing:-.048em;line-height:1.4}
+  .metrics span{color:#bcb7aa;font-size:.875rem}
+  .hero{display:block}
+  main>section:not(.hero){padding-top:70px;padding-bottom:70px}
+  .section-label{font-size:.875rem;letter-spacing:.17em}
+  .section-title{margin-bottom:30px}
+  .project-group{margin:0}
+  .project-open{width:100%;height:100%;color:inherit;display:block;text-align:left;padding:0;border:0;background:none;cursor:pointer}
+  .project-open:focus-visible{outline-offset:-4px}
+  .project-card-thumb{height:auto;aspect-ratio:16/10;object-position:center}
+  .project-card.movie .project-card-thumb{object-position:center 82%}
+  .project-card.shorts .project-card-thumb{object-position:center 66%}
+  .project-card-tag{font-size:.8125rem;letter-spacing:.07em}
+  .project-card-title{font-size:1.125rem}
+  .project-card-period,.project-card-result{font-size:.875rem}
+  .project-card-body{display:flex;flex-direction:column;align-items:flex-start;min-height:187px}
+  .card-action{display:inline-block;color:var(--gold-light);font-size:.875rem;margin-top:auto;padding-top:12px;font-weight:700}
+  .project-card:hover .card-action{text-decoration:underline;text-underline-offset:4px}
+  .career-bullets li{font-size:1rem}
+  .career-period,.career-role{font-size:.875rem}
+  .approach{padding:18px 23px;border-left:2px solid var(--gold);background:#1d1a14;margin-top:14px;color:#d6d0c3}
+  .approach strong{display:block;color:var(--gold-light);margin-bottom:.4rem}
+  .contact-links{display:flex;flex-wrap:wrap;gap:15px 28px;align-items:center}
+  #contact .contact-links a{font-size:.95rem;color:var(--gold-light);text-underline-offset:4px}
+  .work-dialog{color:var(--white);background:#141414;width:min(780px,calc(100% - 28px));max-width:none;max-height:min(90dvh,900px);margin:auto;padding:0;border:1px solid #514727;border-radius:12px;overflow:auto;overscroll-behavior:contain}
+  .work-dialog::backdrop{background:rgba(0,0,0,.8)}
+  .work-dialog .modal{border:0;border-radius:0;max-width:none;width:100%;padding:clamp(21px,6vw,42px)}
+  .modal-header{padding-right:46px}
+  .modal-title{font-family:'Noto Sans KR',sans-serif;font-size:clamp(1.55rem,4vw,2.1rem);font-weight:900;letter-spacing:-.045em;line-height:1.31;margin:0 0 7px}
+  .modal-tag,.modal-period,.modal-section-title,.modal-link{font-size:.875rem}
+  .modal-section-title{letter-spacing:.075em}
+  .modal-period{margin-bottom:19px}
+  .modal-summary,.modal-list li{font-size:1rem}
+  .modal-list li + li{margin-top:9px}
+  .modal-close{font-size:1.6rem;line-height:1;width:42px;height:42px;top:13px;right:14px;border-radius:5px;display:grid;place-items:center;z-index:1}
+  .modal-visual{width:100%;aspect-ratio:16/8.4;object-fit:cover;border-radius:7px;display:block}
+  .modal-visual.poster{object-position:50% 84%}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;list-style:none}
+  .steps li{padding:12px;border:1px solid #373125;background:#1d1a14;border-radius:6px;color:#e8e0ce}
+  .steps small{display:block;color:var(--gold-light);font-size:.8125rem}
+  .modal-link.primary{background:var(--gold-light);color:#16130c;font-weight:700;padding:8px 15px}
+  .modal-link.primary:hover{background:white}
+  .modal-note{color:var(--gray);font-size:.875rem}
+  @media(max-width:740px){
+    .project-grid{grid-template-columns:repeat(auto-fit,minmax(min(235px,100%),1fr))}
+    .hero-inner{gap:24px}
+    .hero{padding-top:110px;padding-bottom:43px}
+    .hero-photo{width:110px;height:110px}
+    .hero-tagline{margin-bottom:16px}
+    .metrics{margin-top:26px;gap:10px}
+    .metrics span{display:block;font-size:.8125rem;line-height:1.45}
+    main>section:not(.hero){padding-top:45px;padding-bottom:48px}
+    .career-item{padding:25px 0}
+  }
+  @media(max-width:420px){
+    .hero-photo{width:86px;height:86px}
+    .hero{padding-top:90px}
+    nav ul{gap:.85rem}
+    nav ul a{font-size:.8125rem;letter-spacing:.03em}
+    .steps{grid-template-columns:1fr}
+    .steps li{display:flex;align-items:baseline;gap:9px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+  }
+  </style>
+</head>
+<body>
+<a class="skip" href="#projects">대표 작업으로 이동</a>
+<nav aria-label="페이지 메뉴">
+  <a class="logo" href="#top">HOJIN YOO</a>
+  <ul>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero" id="top" aria-labelledby="site-title">
+    <div class="hero-inner">
+      <img class="hero-photo" src="/images/2164223c-ecc1-4384-b73f-470d16e1b7b6.png" alt="유호진" width="220" height="220">
+      <div class="hero-text">
+        <p class="hero-subtitle">지엔컴퍼니 · 그냥필름 채널 편집자 지원</p>
+        <h1 class="hero-title" id="site-title">장면을 골라<br><span>이야기의 흐름</span>을 만듭니다.</h1>
+        <p class="hero-tagline">브레드이발소에서 공식 채널 숏폼과 극장판 예고편을 기획·편집한 유호진입니다. 인물이 왜 그렇게 행동하는지, 시청자가 다음 장면을 왜 보고 싶어 하는지를 기준으로 컷을 고릅니다.</p>
+        <ul class="pills" aria-label="주요 작업"><li>유튜브 편집</li><li>상황극 기획</li><li>사운드 마감</li></ul>
+      </div>
+    </div>
+    <div class="metrics" aria-label="주요 성과">
+      <div><strong>100편+</strong><span>공식 두 채널에서 8개월간 발행</span></div>
+      <div><strong>274만</strong><span>‘치즈가 그리는대로!’ 릴스 조회</span></div>
+      <div><strong>6.3만 → 12만</strong><span>2기 대비 3기 예고편 평균 조회</span></div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="work-title">
+    <div class="section-inner">
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-title" id="work-title">PROJECTS</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <button class="project-open" type="button" data-dialog="cheese" aria-haspopup="dialog" aria-controls="cheese" aria-label="치즈가 그리는대로! 작업 상세">
+            <img class="project-card-thumb" src="/images/thumb-format.jpg" alt="" width="395" height="310">
+            <span class="project-card-body">
+              <span class="project-card-tag">상황극 숏폼</span>
+              <span class="project-card-title">치즈가 그리는대로!</span>
+              <span class="project-card-result">원작 설정에서 밈이 등장할 이유를 만든 숏폼. <strong>릴스 조회수 274만.</strong></span>
+              <span class="card-action">작업 상세 보기</span>
+            </span>
+          </button>
+        </article>
+        <article class="project-card movie">
+          <button class="project-open" type="button" data-dialog="trailer" aria-haspopup="dialog" aria-controls="trailer" aria-label="극장판 3기 예고편 작업 상세">
+            <img class="project-card-thumb" src="/images/thumb-movie3.jpg" alt="" width="1080" height="696">
+            <span class="project-card-body">
+              <span class="project-card-tag">극장판 예고편</span>
+              <span class="project-card-title">베이커리타운의 악당들</span>
+              <span class="project-card-result">6편의 에피소드를 한 대결로 편집. <strong>런칭·티저·메인 모두 직접 편집.</strong></span>
+              <span class="card-action">작업 상세 보기</span>
+            </span>
+          </button>
+        </article>
+        <article class="project-card shorts">
+          <button class="project-open" type="button" data-dialog="channel" aria-haspopup="dialog" aria-controls="channel" aria-label="공식 채널 오리지널 쇼츠 작업 상세">
+            <img class="project-card-thumb" src="/images/thumb-shorts.jpg" alt="" width="477" height="604">
+            <span class="project-card-body">
+              <span class="project-card-tag">공식 채널 정기 발행</span>
+              <span class="project-card-title">브레드이발소 오리지널 쇼츠</span>
+              <span class="project-card-result">캐릭터 배역을 고정해 상황을 빨리 전달. <strong>평균 시청 지속률 69% → 72.8%.</strong></span>
+              <span class="card-action">작업 상세 보기</span>
+            </span>
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="career" aria-labelledby="career-title">
+    <div class="section-inner">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title" id="career-title">CAREER</h2>
+      <div class="career-item">
+        <div class="career-meta">
+          <h3 class="career-company">브레드이발소</h3>
+          <p class="career-role">SNS 콘텐츠 기획·편집 / PD</p>
+          <p class="career-period">2024.07 – 2026.03</p>
+        </div>
+        <ul class="career-bullets">
+          <li>공식 유튜브·인스타그램에서 합산 주 4편, 8개월간 100편 이상 발행.</li>
+          <li>8인 소재회의를 주재하고 제작팀과 구현 범위를 맞췄으며, 극장판 홍보 영상의 주차별 발행 일정을 조율.</li>
+          <li>편집·후반: Premiere Pro, After Effects, Photoshop.</li>
+        </ul>
+      </div>
+      <div class="career-item">
+        <div class="career-meta">
+          <h3 class="career-company">CJ ENM 애니메이션부</h3>
+          <p class="career-role">파견 · 약 6개월</p>
+        </div>
+        <ul class="career-bullets"><li>투니버스 유튜브 썸네일과 캐릭터 IP 기반 SNS 콘텐츠 기획·제작.</li></ul>
+      </div>
+      <div class="career-item">
+        <div class="career-meta">
+          <h3 class="career-company">대학 광고 동아리</h3>
+          <p class="career-role">교내 활동 · 촬영 참여</p>
+        </div>
+        <ul class="career-bullets"><li>대학 광고 동아리에서 광고 영상 촬영에 참여.</li></ul>
+      </div>
+      <div class="approach"><strong>그냥필름에서 하고 싶은 편집</strong>초반에 인물 관계와 상황이 전달되도록 장면을 정리하고, 대사 뒤 리액션과 한 박자의 여백으로 웃음이 살아나는 편집을 하고 싶습니다.</div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="section-inner contact-links">
+    <strong>유호진 · HOJIN YOO</strong>
+    <a href="mailto:hojin315@naver.com">hojin315@naver.com</a>
+    <a href="https://hojinyu315.github.io/">전체 포트폴리오</a>
+  </div>
+</footer>
+
+<dialog class="work-dialog" id="cheese" aria-labelledby="cheese-title">
+  <article class="modal">
+    <button type="button" class="modal-close" aria-label="작업 상세 닫기">×</button>
+    <header class="modal-header">
+      <p class="modal-tag">브레드이발소 · 공식 인스타그램 릴스</p>
+      <h2 class="modal-title" id="cheese-title">치즈가 그리는대로!</h2>
+      <p class="modal-period">기획 · 장면 구성 · 합성 · 편집</p>
+    </header>
+    <img class="modal-visual" src="/images/thumb-format.jpg" alt="노트에 캐릭터를 그리는 브레드이발소 릴스 대표 장면" width="395" height="310" loading="lazy">
+    <div class="modal-links"><a class="modal-link primary" href="https://www.instagram.com/reel/DJlhVdpvVAf/" target="_blank" rel="noopener">완성 영상 보기 · Instagram</a></div>
+    <h3 class="modal-section-title">편집 의도</h3>
+    <p class="modal-summary">이탈리안 브레인롯 밈을 가져오면서도 캐릭터가 왜 변하는지 이야기 안에서 납득되길 바랐습니다. 노트에 그린 내용이 현실이 되는 원작 에피소드의 규칙으로 새 장면을 연결했습니다.</p>
+    <ol class="steps">
+      <li><small>설정</small>노트에 그림을 그린다.</li>
+      <li><small>변화</small>그림처럼 캐릭터가 변한다.</li>
+      <li><small>전환</small>밈 속 장면으로 이어진다.</li>
+    </ol>
+    <h3 class="modal-section-title">직접 한 일</h3>
+    <ul class="modal-list">
+      <li>나노바나나로 그림을 만들고 Photoshop으로 원본과 색을 맞췄습니다. 신규 장면은 Kling으로 영상화했습니다.</li>
+      <li>그리는 행동을 통째로 생성하면 손이 어색해져, 원본 손동작은 살리고 노트 속 그림만 After Effects로 합성했습니다. 손이 그림에 가려지지 않게 마감했습니다.</li>
+    </ul>
+    <h3 class="modal-section-title">성과</h3>
+    <p class="modal-note">브레드이발소 공식 인스타그램 릴스 조회수 274만.</p>
+  </article>
+</dialog>
+
+<dialog class="work-dialog" id="trailer" aria-labelledby="trailer-title">
+  <article class="modal">
+    <button type="button" class="modal-close" aria-label="작업 상세 닫기">×</button>
+    <header class="modal-header">
+      <p class="modal-tag">브레드이발소 · 극장판 3기</p>
+      <h2 class="modal-title" id="trailer-title">여섯 에피소드를 하나의 대결로</h2>
+      <p class="modal-period">2025.08 – 2025.10 · 런칭·티저·메인 예고편 기획·편집</p>
+    </header>
+    <img class="modal-visual poster" src="/images/thumb-movie3.jpg" alt="브레드이발소: 베이커리타운의 악당들 대표 이미지" width="1080" height="696" loading="lazy">
+    <div class="modal-links">
+      <a class="modal-link primary" href="https://tv.naver.com/v/83443600" target="_blank" rel="noopener">메인 예고편 보기 · 네이버TV</a>
+      <a class="modal-link" href="https://hojinyu315.github.io/#projects" target="_blank" rel="noopener">극장판 홍보 작업 더 보기</a>
+    </div>
+    <h3 class="modal-section-title">편집 의도</h3>
+    <p class="modal-summary">10분짜리 단편 여섯 편을 묶은 극장판을 하나의 이야기처럼 보여주기 위해, 메인 예고편은 악당과 주인공의 대결을 따라가도록 구성했습니다.</p>
+    <h3 class="modal-section-title">직접 한 일</h3>
+    <ul class="modal-list">
+      <li>대결 구도가 이어지는 장면을 골라 서로 다른 에피소드의 컷을 연결했습니다. 런칭·티저·메인 예고편을 모두 직접 편집했습니다.</li>
+      <li>Premiere Pro와 After Effects로 컷·자막·화면 문구·전환을 마감했습니다. <strong>기존 OST의 MR</strong>을 영상 길이와 컷 타이밍에 맞게 재편집하고 효과음을 배치했습니다.</li>
+    </ul>
+    <h3 class="modal-section-title">성과</h3>
+    <p class="modal-note">2기 대비 3기 런칭·티저·메인 예고편 평균 조회수 6.3만 → 12만.</p>
+  </article>
+</dialog>
+
+<dialog class="work-dialog" id="channel" aria-labelledby="channel-title">
+  <article class="modal">
+    <button type="button" class="modal-close" aria-label="작업 상세 닫기">×</button>
+    <header class="modal-header">
+      <p class="modal-tag">브레드이발소 · 유튜브와 인스타그램</p>
+      <h2 class="modal-title" id="channel-title">브레드이발소 오리지널 쇼츠</h2>
+      <p class="modal-period">숏폼 기획·편집 · 채널 발행</p>
+    </header>
+    <img class="modal-visual" src="/images/thumb-shorts.jpg" style="object-position:50% 69%" alt="브레드이발소 오리지널 쇼츠 대표 장면" width="477" height="604" loading="lazy">
+    <div class="modal-links"><a class="modal-link primary" href="https://www.youtube.com/@breadbarbershop/shorts" target="_blank" rel="noopener">공식 채널 쇼츠 보기 · YouTube</a></div>
+    <h3 class="modal-section-title">기획과 편집 기준</h3>
+    <p class="modal-summary">밈이 바뀌어도 시청자가 인물의 행동을 빨리 이해할 수 있도록 주요 캐릭터의 배역을 고정했습니다. 브레드는 해결사, 윌크는 어리숙한 인물, 초코는 단호한 인물로 두고 상황을 바꿨습니다.</p>
+    <h3 class="modal-section-title">맡은 범위와 결과</h3>
+    <ul class="modal-list">
+      <li>8인 소재회의를 주재하고 아이디어를 영상으로 기획·편집했습니다. 발행 후 반응을 다음 소재와 구성에 반영했습니다.</li>
+      <li>공식 유튜브와 인스타그램 두 채널에서 합산 주 4편, 8개월간 100편 이상을 발행했습니다.</li>
+      <li>배역을 고정한 포맷에서 평균 시청 지속률이 <strong>69%에서 72.8%</strong>로 올랐습니다.</li>
+    </ul>
+  </article>
+</dialog>
+
+<script>
+  document.querySelectorAll('[data-dialog]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const dialog = document.getElementById(button.dataset.dialog);
+      if (!dialog || dialog.open) return;
+      dialog.showModal();
+      dialog.querySelector('.modal-close').focus();
+      dialog.addEventListener('close', function () {
+        button.focus({preventScroll:true});
+      }, {once:true});
+    });
+  });
+  document.querySelectorAll('.work-dialog').forEach(function (dialog) {
+    dialog.querySelector('.modal-close').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+</script>
+</body>
+</html>
