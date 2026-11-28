@@ -1692,11 +1692,11 @@ nav .logo, .hero-wordmark {
       transform-origin: 50% 100%;
       mask-image: var(--hero-char-fade);
     }
-    /* Keep faces and props legible; soften the edge nearest the text/card. */
+    /* Absolute art sizes follow the space outside the original 1100px content row. */
     .hero-char-1 {
       left: clamp(12px, 2.2vw, 44px);
       bottom: 0;
-      width: clamp(120px, 11.3vw, 208px);
+      width: clamp(70px, calc(50% - 605px), 185px);
       --hero-char-fade: linear-gradient(114deg, #000 20%, rgba(0,0,0,.91) 67%, transparent 99%);
       mask-image: var(--hero-char-fade), linear-gradient(to bottom, #000 45%, rgba(0,0,0,.74) 74%, transparent 100%);
       mask-composite: intersect;
@@ -1712,24 +1712,13 @@ nav .logo, .hero-wordmark {
     .hero-char-3 {
       right: clamp(8px, 1.1vw, 22px);
       bottom: -1px;
-      width: clamp(208px, 24.7vw, 368px);
+      width: clamp(170px, calc(50% - 470px), 350px);
       --hero-char-fade: linear-gradient(100deg, rgba(0,0,0,.32), rgba(0,0,0,.75) 23%, #000 55%);
       mask-image: var(--hero-char-fade), linear-gradient(to bottom, #000 48%, rgba(0,0,0,.70) 78%, transparent 100%);
       mask-composite: intersect;
       animation: nwInRight 1.2s cubic-bezier(.2,.8,.2,1) .75s forwards, nwFloat 5s ease-in-out 2s infinite;
     }
 
-    @media (min-width: 1280px) {
-      .hero { padding: clamp(78px, 5.2vw, 112px) 0 clamp(78px, 6.2vw, 127px); }
-      .hero-inner {
-        display: grid;
-        grid-template-columns: minmax(0, 57%) minmax(0, 1fr);
-        gap: 3%;
-        max-width: 77vw;
-      }
-      .hero-text { max-width: min(100%, 690px); }
-      .hero-inner .profile-card { justify-self: start; }
-    }
     @media (769px <= width < 1280px) {
       .hero-char-1 { left: -22px; width: 118px; }
       .hero-char-2 { left: auto; right: 7%; width: 155px; top: 11px; }
