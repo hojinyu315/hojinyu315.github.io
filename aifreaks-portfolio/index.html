@@ -1666,6 +1666,18 @@ nav .logo, .hero-wordmark {
     .reference-evidence a { display: block; overflow: hidden; border: 1px solid #e5e7eb; border-radius: 12px; background: #242321; }
     .reference-evidence img { display: block; width: 100%; height: auto; object-fit: contain; }
     .reference-evidence figcaption { margin-top: 10px; color: #747982; font-size: 12px; line-height: 1.8; word-break: keep-all; }
+    /* Crehoho 영상 모듈: 아직 준비 안 된 이미지 자리 */
+    .ph { border: 1.5px dashed #9FC9EA; background: #F3F9FE; border-radius: 10px; color: #4A7FA8; font-size: 12.5px; font-weight: 600; line-height: 1.5; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8px; word-break: keep-all; min-width: 0; overflow: hidden; }
+    .ph small { display: block; font-weight: 500; color: #7FA6C4; font-size: 11.5px; margin-top: 4px; }
+    .ph-row { display: flex; gap: 8px; align-items: stretch; margin-top: 12px; }
+    .ph-arrow { align-self: center; color: #9FC9EA; font-weight: 700; flex: 0 0 auto; }
+    .vid-row { display: flex; gap: 10px; margin-top: 16px; }
+    .vid-item { flex: 1; min-width: 0; }
+    .vid-item video { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; background: #111; display: block; }
+    .vid-cap { font-size: 12.5px; color: var(--kl-sub); margin-top: 6px; line-height: 1.5; word-break: keep-all; }
+    .vid-cap strong { color: var(--kl-text); }
+    @media (max-width: 768px) { .ph-row[style] { max-width: none !important; } .ph { font-size: 10.5px; padding: 4px; } .ph small { font-size: 9.5px; } .ph-row { gap: 4px; } .ph-arrow { font-size: 10px; } .vid-row { gap: 6px; } }
+    .ph-label { font-size: 13px; font-weight: 700; color: var(--kl-text); margin-top: 22px; }
   </style>
 <!-- Embedded Poppins subset: font license
 Copyright 2020 The Poppins Project Authors (https://github.com/itfoundry/Poppins)
@@ -2041,7 +2053,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-releases-header">
         <span class="project-releases-title">Crehoho · 개인 프로젝트 | 2023.05 – 현재</span>
       </div>
-      <div class="project-grid">
+      <div class="project-grid project-grid-2">
         <div class="project-card" onclick="openModal('modal-crehoho')">
           <div class="card-thumb-wrap">
             <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/crehoho-collage.jpg" alt="Crehoho" style="object-position:50% 60%;" onerror="this.style.background='#f4f4f4'">
@@ -2053,6 +2065,20 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
               <div class="nw-card-sub">기여도 100%</div>
               <p class="nw-card-desc">2023년 가상 전시를 상정한 아트워크 기획에서 출발한 개인 창작 채널 상업 IP 제약 없이 새 생성 툴과 몰입 구조를 자유롭게 실험하는 공간</p>
               <div class="nw-card-tags"><span>#이미지서사</span><span>#Kling영상화</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" onclick="openModal('modal-crehoho-video')">
+          <div class="card-thumb-wrap">
+            <img class="project-card-thumb" src="crehoho-museum-poster.jpg" alt="미술관에서" style="object-position:50% 62%;" onerror="this.style.background='#f4f4f4'">
+            <span class="nw-badge">AI</span>
+          </div>
+          <div class="project-card-body">
+            <div class="card-body-text">
+              <div class="card-poster-title">Crehoho — AI 영상 연출</div>
+              <div class="nw-card-sub">[미술관에서] 외 2편</div>
+              <p class="nw-card-desc">그림을 보던 남자가 그림 속으로 손을 뻗는 29초 영상. 단계마다 검토 관문을 두고 AI 에이전트에게 제작을 맡겨 완성</p>
+              <div class="nw-card-tags"><span>#AI영상</span><span>#제작관리</span></div>
             </div>
           </div>
         </div>
@@ -2738,6 +2764,112 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <div style="margin-top: 16px;">
             <a class="ext-link" href="https://www.instagram.com/crehoho._.u/" target="_blank" style="font-size: 18px; font-weight: 600; color: var(--dark); letter-spacing: 0.3px;">→ 현재 진행 중인 아트워크 보기 @crehoho._.u</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-crehoho-video" class="modal-overlay" onclick="closeModalOnOverlay(event,'modal-crehoho-video')">
+  <div class="modal kl-detail">
+    <button class="modal-close" onclick="closeModal('modal-crehoho-video')" aria-label="닫기">✕</button>
+    <div class="kd-hero">
+      <img class="kd-hero-img" src="crehoho-museum-poster.jpg" alt="" style="object-position:50% 60%;">
+      <div class="kd-hero-text">
+        <div class="kd-title">Crehoho — AI 영상 연출</div>
+        <div class="kd-meta"><span class="kd-badge">Crehoho</span>2026 · [미술관에서] · 밈 · 패러디</div>
+        <div class="kd-score"><span class="card-score-dot"></span>대표작 [미술관에서] 29초 · 8컷</div>
+      </div>
+    </div>
+    <div class="kd-body">
+      <aside class="kd-side">
+        <div class="kd-side-box">
+          <div class="kd-side-title">작업 정보</div>
+          <ul class="modal-list">
+            <li><span class="kd-k">역할</span><span class="kd-v">[미술관에서] 기획·기준 설정·단계별 검토와 승인은 직접, 생성·3D 작업 실행은 <strong>AI 에이전트(Codex·Claude)</strong></span></li>
+            <li><span class="kd-k">사용 툴</span><span class="kd-tools"><span class="kd-tool">Higgsfield</span><span class="kd-tool">나노바나나 Pro</span><span class="kd-tool">Kling</span><span class="kd-tool">Seedance</span><span class="kd-tool">Blender</span><span class="kd-tool">CapCut</span></span></li>
+            <li><span class="kd-k">목적</span><span class="kd-v">이미지 한 장으로 하던 서사를 소리와 움직임이 있는 영상으로 넓히기</span></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="kd-main">
+        <div class="kd-sec">
+          <div class="modal-section-title">기본정보</div>
+          <p class="kd-summary">미술관에서 그림을 보던 남자가 손을 뻗어 그림 속으로 들어가는 <strong>29초 세로 영상</strong><br>컷 구성부터 효과음까지 단계를 나누고, 단계마다 직접 검토한 뒤 다음으로 넘어가는 방식으로 제작</p>
+        </div>
+        <div class="kd-sec kd-media">
+          <div class="modal-section-title">Contents</div>
+          <div class="vid-row">
+            <div class="vid-item" style="flex:1.35;">
+              <video src="crehoho-museum.mp4" poster="crehoho-museum-poster.jpg" controls playsinline preload="metadata"></video>
+              <div class="vid-cap"><strong>[미술관에서]</strong> · 29초 · 소리 켜고 보기</div>
+            </div>
+            <div class="vid-item">
+              <video src="crehoho-meme.mp4" poster="crehoho-meme-poster.jpg" controls playsinline preload="metadata"></video>
+              <div class="vid-cap"><strong>마인크래프트 변신 밈</strong> · 15초</div>
+            </div>
+            <div class="vid-item">
+              <video src="crehoho-gta.mp4" poster="crehoho-gta-poster.jpg" controls playsinline preload="metadata"></video>
+              <div class="vid-cap"><strong>GTA 6 트레일러 패러디</strong> · 21초 · Crehoho 작품 재구성</div>
+            </div>
+          </div>
+        </div>
+        <div class="kd-sec">
+          <div class="modal-section-title">Process — [미술관에서]</div>
+          <div class="ph-label">① 대표 장면과 컷 흐름</div>
+          <div class="ph" style="aspect-ratio:16/7; margin-top:10px;">대표 장면 1장<small>최종 영상에서 캡처</small></div>
+          <div class="ph-row">
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">S01</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S02</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S03</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S04</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S05</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S06</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S08</div>
+          </div>
+          <div class="ph-label">② 한 장면이 단계마다 바뀌는 과정</div>
+          <div class="ph-row">
+            <div class="ph" style="flex:1; aspect-ratio:3/4;">컷 구성<small>구성안 PDF</small></div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:3/4;">레퍼런스<small>인물·공간 검토판</small></div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:3/4;">컷 이미지<small>시작 A / 끝 B</small></div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:3/4;">Blender 프리비즈<small>동작·카메라</small></div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:3/4;">최종 영상<small>같은 장면</small></div>
+          </div>
+          <div class="ph-label">③ 가장 어려웠던 장면 — S08 손이 그림 속으로</div>
+          <div class="ph-row" style="max-width:72%;">
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">시도 01</div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">시도 02</div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">시도 03</div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">확정<small>49번째 버전</small></div>
+          </div>
+          <div class="ph-label">④ 프리비즈 vs 최종 (같은 순간)</div>
+          <div class="ph-row" style="max-width:40%;">
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">BEFORE<small>Blender 상자 인물</small></div><span class="ph-arrow">→</span>
+            <div class="ph" style="flex:1; aspect-ratio:9/16;">AFTER<small>최종 영상</small></div>
+          </div>
+          <div class="ph-label">⑤ 작업 화면</div>
+          <div class="ph-row">
+            <div class="ph" style="flex:1.4; aspect-ratio:16/10;">CapCut 편집 화면<small>공간음·효과음·BGM 트랙 분리 · 호진 캡처</small></div>
+            <div class="ph" style="flex:1; aspect-ratio:4/5;">에이전트 검수 보고<small>"어느 부위가 왜 다른지" · 호진 캡처</small></div>
+          </div>
+        </div>
+        <div class="kd-sec">
+          <div class="modal-section-title">Problem</div>
+          <ul class="modal-list">
+            <li>"어색해"라고만 하면 에이전트가 제멋대로 고쳐 수정이 끝없이 반복되고 크레딧이 낭비됨</li>
+            <li>컷 이미지를 통째로 다시 만들면 셔츠 모양·색, 신발 크기 같은 앞뒤 연결이 깨짐</li>
+          </ul>
+        </div>
+        <div class="kd-sec">
+          <div class="modal-section-title">Solution</div>
+          <ul class="modal-list">
+            <li><strong>검토 관문:</strong> 컷 구성 → 레퍼런스 → 컷 이미지 → Blender 프리비즈 → 영상화 5단계. 단계마다 직접 승인해야 다음으로 진행</li>
+            <li><strong>재생성 상한:</strong> 에이전트가 먼저 검수하고 재생성은 최대 2회. 레퍼런스와 다르면 어느 부위가 왜 다른지 함께 보고</li>
+            <li><strong>부분 수정:</strong> 바뀔 부분만 합성하고, 수정 때마다 머리 모양·피부색·얼굴 화풍을 인접 컷과 비교</li>
+            <li><strong>동작 먼저:</strong> Blender로 걷기·돌아보기·카메라 동선을 먼저 정하고, 그 영상을 영상화 모델에 동작 참고로 함께 입력</li>
+            <li><strong>사운드:</strong> 같은 미술관 잔향으로 효과음을 맞추고, 공간음·효과음·BGM을 따로 조절할 수 있는 트랙으로 구성</li>
+          </ul>
+        </div>
+        <div class="kd-sec kd-cards">
+          <div class="modal-section-title">Lessons Learned</div>
+          <ul class="modal-list">
+            <li>AI에게 맡길수록 "무엇을 기준으로 통과시킬지"를 먼저 정해야 결과가 흔들리지 않음</li>
+            <li>이번에 정한 순서(구도·동작은 Blender로 먼저, 생성 모델은 질감만)를 다음 Crehoho 작업의 기본 파이프라인으로 옮겨 씀</li>
+          </ul>
         </div>
       </div>
     </div>
