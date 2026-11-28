@@ -1907,6 +1907,66 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
 -->
+<style>
+    /* Motion backdrop: original work clips, behind the text and character art. */
+    #hero { isolation: isolate; }
+    #hero .hero-motion {
+      position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+      background: #e8b24b url("hero-motion.webp") 70% 49% / cover no-repeat;
+    }
+    #hero .hero-motion-video {
+      position: absolute; inset: -3%; width: 106%; height: 106%;
+      z-index: 0; object-fit: cover; object-position: 70% 49%;
+      filter: saturate(.65) sepia(.32) blur(5px);
+      opacity: 0; transition: opacity .8s ease;
+    }
+    #hero .hero-motion.is-ready .hero-motion-video { opacity: 1; }
+    #hero .hero-motion::before, #hero .hero-motion::after {
+      content: ''; position: absolute; inset: 0;
+    }
+    #hero .hero-motion::before {
+      z-index: 1;
+      background:
+        linear-gradient(104deg, #fffdf5 0%, rgba(255,251,224,.97) 24%, rgba(255,246,183,.85) 43%, rgba(255,229,67,.55) 72%, rgba(255,216,44,.49) 100%),
+        linear-gradient(0deg, rgba(255,240,133,.46), transparent 38%, rgba(255,252,224,.24));
+    }
+    #hero .hero-motion::after {
+      z-index: 2;
+      inset: -16%;
+      background:
+        radial-gradient(ellipse at 72% 39%, rgba(255,252,215,.44), transparent 28%),
+        radial-gradient(ellipse at 93% 74%, rgba(255,207,45,.46), transparent 31%);
+      animation: kakao-light-drift 18s ease-in-out infinite alternate;
+      animation-play-state: paused;
+    }
+    html.hero-in-view #hero .hero-motion.is-moving::after { animation-play-state: running; }
+    @keyframes kakao-light-drift {
+      from { transform: translate3d(-3%, -3%, 0) scale(1); }
+      to { transform: translate3d(4%, 5%, 0) scale(1.12); }
+    }
+    #hero .hero-motion-toggle {
+      position: absolute; z-index: 2; right: clamp(14px, 2.2vw, 36px); bottom: 12px;
+      display: inline-flex; align-items: center; gap: 6px;
+      min-height: 36px; padding: 0 11px;
+      font-family: inherit; font-size: 11px; font-weight: 600; line-height: 1.2;
+      color: #574217; background: rgba(255,252,236,.9);
+      border: 1px solid rgba(91,67,15,.23); border-radius: 99px; cursor: pointer;
+    }
+    #hero .hero-motion-toggle[hidden] { display: none; }
+    #hero .hero-motion-toggle:focus-visible { outline: 2px solid #744c12; outline-offset: 3px; }
+    #hero .hero-motion-toggle-icon { display: grid; place-items: center; width: 12px; }
+    @media (max-width: 768px) {
+      #hero .hero-motion, #hero .hero-motion-video { background-position: 63% center; object-position: 63% center; }
+      #hero .hero-motion::before {
+        background: linear-gradient(111deg,#fffdf5 0%,rgba(255,249,213,.93) 31%,rgba(255,234,112,.72) 100%);
+      }
+      #hero .hero-motion-toggle { min-height: 44px; bottom: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #hero .hero-motion::after { animation: none; }
+      #hero .hero-motion-video { transition: none; }
+    }
+</style>
 </head>
 <body>
 
@@ -1954,6 +2014,9 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 <!-- HERO -->
 <section class="hero" id="hero">
+  <div class="hero-motion" aria-hidden="true">
+    <video class="hero-motion-video" data-src="hero-motion.mp4" muted loop playsinline preload="none" tabindex="-1" disablepictureinpicture></video>
+  </div>
   <img class="hero-char hero-char-1" src="hero-char-1.png" alt="" aria-hidden="true" onerror="this.remove()">
   <img class="hero-char hero-char-2" src="hero-char-2.png" alt="" aria-hidden="true" onerror="this.remove()">
   <img class="hero-char hero-char-3" src="hero-char-3.png" alt="" aria-hidden="true" onerror="this.remove()">
@@ -1980,6 +2043,10 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       </ul>
     </div>
   </div>
+  <button class="hero-motion-toggle" type="button" hidden>
+    <span class="hero-motion-toggle-icon" aria-hidden="true"></span>
+    <span class="hero-motion-toggle-label">배경 재생</span>
+  </button>
 </section>
 
 <!-- METRICS -->
@@ -3463,6 +3530,67 @@ if (nav && navToggle) {
   reduceMotion.addEventListener('change', revealAll);
 })();
 
+</script>
+<script>
+(() => {
+  const hero = document.querySelector('#hero');
+  const layer = hero?.querySelector('.hero-motion');
+  const video = layer?.querySelector('video');
+  const button = hero?.querySelector('.hero-motion-toggle');
+  if (!video || !button || !video.canPlayType('video/mp4')) return;
+  const label = button.querySelector('.hero-motion-toggle-label');
+  const icon = button.querySelector('.hero-motion-toggle-icon');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let requested = !reduced.matches;
+  let inView = !('IntersectionObserver' in window);
+  let attempt = 0;
+  const paint = () => {
+    label.textContent = requested ? '배경 멈추기' : '배경 재생';
+    icon.textContent = requested ? 'Ⅱ' : '▶';
+  };
+  const sync = () => {
+    const token = ++attempt;
+    const shouldPlay = requested && inView && !document.hidden;
+    layer.classList.toggle('is-moving', shouldPlay);
+    if (!shouldPlay) {
+      if (!video.paused) video.pause();
+      return;
+    }
+    if (!video.getAttribute('src')) video.src = video.dataset.src;
+    video.play().catch(() => {
+      if (token !== attempt) return;
+      requested = false;
+      layer.classList.remove('is-moving');
+      paint();
+    });
+  };
+  video.addEventListener('playing', () => layer.classList.add('is-ready'), { once: true });
+  video.addEventListener('error', () => {
+    requested = false;
+    layer.classList.remove('is-ready', 'is-moving');
+    button.hidden = true;
+  });
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    requested = !requested;
+    paint();
+    sync();
+  });
+  reduced.addEventListener('change', event => {
+    requested = !event.matches;
+    paint();
+    sync();
+  });
+  document.addEventListener('visibilitychange', sync);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      sync();
+    }, { threshold: .05 }).observe(hero);
+  }
+  paint();
+  sync();
+})();
 </script>
 </body>
 </html>
