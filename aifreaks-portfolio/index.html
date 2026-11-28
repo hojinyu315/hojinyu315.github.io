@@ -1680,6 +1680,12 @@ nav .logo, .hero-wordmark {
     .vid-title:hover { color: var(--accent-dark); text-decoration: underline; }
     .vid-cap { margin-top: 2px; }
     @media (max-width: 768px) { .ph-row[style] { max-width: none !important; } .ph { font-size: 10.5px; padding: 4px; } .ph small { font-size: 9.5px; } .ph-row { gap: 4px; } .ph-arrow { font-size: 10px; } .vid-row { gap: 6px; } }
+    .pt { flex: 1; min-width: 0; }
+    .pt img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 8px; display: block; background: #F4F6F8; border: 1px solid #ECEEF0; }
+    .pt-cap { font-size: 12.5px; font-weight: 700; color: var(--kl-text); margin-top: 6px; line-height: 1.4; word-break: keep-all; }
+    .pt-cap small { display: block; font-weight: 500; color: var(--kl-sub); font-size: 11.5px; margin-top: 2px; }
+    .pt-strip { width: 100%; display: block; border-radius: 8px; margin-top: 10px; }
+    @media (max-width: 768px) { .pt-cap { font-size: 10.5px; } .pt-cap small { font-size: 9.5px; } }
     .ph-label { font-size: 13px; font-weight: 700; color: var(--kl-text); margin-top: 22px; }
   </style>
 <!-- Embedded Poppins subset: font license
@@ -2737,7 +2743,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <div class="kd-sec">
           <div class="modal-section-title">Origin</div>
             <ul class="modal-list">
-            <li>대학 시절 <strong>Photoshop을 더 잘 다루기 위한 습작</strong>을 올리는 연습 공간으로 시작. 만들다 보니 작업에 색깔이 생겼고, 인디 아티스트들에게서 연락을 받아 <strong>앨범 커버 작업</strong>으로 이어짐</li>
+            <li>대학 시절 <strong>Photoshop을 더 잘 다루기 위한 습작</strong>을 올리는 연습 공간으로 시작.<br>만들다 보니 작업에 색깔이 생겼고, 인디 아티스트들에게서 연락을 받아 <strong>앨범 커버 작업</strong>으로 이어짐</li>
           </ul>
         </div>
         <div class="kd-sec">
@@ -2819,33 +2825,30 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         </div>
         <div class="kd-sec">
           <div class="modal-section-title">Process</div>
-          <div class="ph-label">① 대표 장면과 컷 흐름</div>
-          <div class="ph" style="aspect-ratio:16/7; margin-top:10px;">대표 장면 1장<small>최종 영상에서 캡처</small></div>
+          <div class="ph-label">① 최종 컷 흐름</div>
+          <a href="proc-flow.jpg" target="_blank"><img class="pt-strip" src="proc-flow.jpg" alt="최종 컷 흐름" loading="lazy"></a>
+          <div class="ph-label">② 한 장면이 단계마다 바뀌는 과정 — 손을 올리는 장면</div>
           <div class="ph-row">
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">S01</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S02</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S03</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S04</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S05</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S06</div><div class="ph" style="flex:1; aspect-ratio:9/16;">S08</div>
+            <div class="pt"><a href="proc2-1-plan.jpg" target="_blank"><img src="proc2-1-plan.jpg" alt="컷 구성" loading="lazy"></a><div class="pt-cap">컷 구성<small>구성안</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc2-2-ref.jpg" target="_blank"><img src="proc2-2-ref.jpg" alt="레퍼런스" loading="lazy"></a><div class="pt-cap">레퍼런스<small>인물 전신</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc2-3-cut.jpg" target="_blank"><img src="proc2-3-cut.jpg" alt="컷 이미지" loading="lazy"></a><div class="pt-cap">컷 이미지<small>시작 A · 끝 B</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc2-4-previs.jpg" target="_blank"><img src="proc2-4-previs.jpg" alt="Blender 프리비즈" loading="lazy"></a><div class="pt-cap">Blender 프리비즈<small>동작·카메라</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc2-5-final.jpg" target="_blank"><img src="proc2-5-final.jpg" alt="최종 영상" loading="lazy"></a><div class="pt-cap">최종 영상</div></div>
           </div>
-          <div class="ph-label">② 한 장면이 단계마다 바뀌는 과정</div>
-          <div class="ph-row">
-            <div class="ph" style="flex:1; aspect-ratio:3/4;">컷 구성<small>구성안 PDF</small></div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:3/4;">레퍼런스<small>인물·공간 검토판</small></div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:3/4;">컷 이미지<small>시작 A / 끝 B</small></div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:3/4;">Blender 프리비즈<small>동작·카메라</small></div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:3/4;">최종 영상<small>같은 장면</small></div>
-          </div>
-          <div class="ph-label">③ 가장 어려웠던 장면 — S08 손이 그림 속으로</div>
+          <div class="ph-label">③ 가장 어려웠던 장면 — 손이 그림 속으로</div>
           <div class="ph-row" style="max-width:72%;">
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">시도 01</div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">시도 02</div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">시도 03</div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">확정<small>49번째 버전</small></div>
+            <div class="pt"><a href="proc3-1.jpg" target="_blank"><img src="proc3-1.jpg" alt="시도 01" loading="lazy"></a><div class="pt-cap">시도 01<small>빛이 번져 포털처럼 보임</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc3-2.jpg" target="_blank"><img src="proc3-2.jpg" alt="시도 02" loading="lazy"></a><div class="pt-cap">시도 02<small>손끝에만 빛</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc3-3.jpg" target="_blank"><img src="proc3-3.jpg" alt="시도 03" loading="lazy"></a><div class="pt-cap">시도 03<small>손목에 빛 고리</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc3-4.jpg" target="_blank"><img src="proc3-4.jpg" alt="확정" loading="lazy"></a><div class="pt-cap">확정<small>그림 표면의 빛 결을 손이 통과 · 49번째 버전</small></div></div>
           </div>
           <div class="ph-label">④ 프리비즈 vs 최종 (같은 순간)</div>
           <div class="ph-row" style="max-width:40%;">
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">BEFORE<small>Blender 상자 인물</small></div><span class="ph-arrow">→</span>
-            <div class="ph" style="flex:1; aspect-ratio:9/16;">AFTER<small>최종 영상</small></div>
+            <div class="pt"><a href="proc4-before.jpg" target="_blank"><img src="proc4-before.jpg" alt="BEFORE" loading="lazy"></a><div class="pt-cap">BEFORE<small>Blender 프리비즈</small></div></div><span class="ph-arrow">→</span>
+            <div class="pt"><a href="proc4-after.jpg" target="_blank"><img src="proc4-after.jpg" alt="AFTER" loading="lazy"></a><div class="pt-cap">AFTER<small>최종 영상</small></div></div>
           </div>
           <div class="ph-label">⑤ 작업 화면</div>
-          <div class="ph-row">
+          <div class="ph-row" style="max-width:62%;">
             <div class="ph" style="flex:1.4; aspect-ratio:16/10;">CapCut 편집 화면<small>공간음·효과음·BGM 트랙 분리 · 호진 캡처</small></div>
             <div class="ph" style="flex:1; aspect-ratio:4/5;">에이전트 검수 보고<small>"어느 부위가 왜 다른지" · 호진 캡처</small></div>
           </div>
